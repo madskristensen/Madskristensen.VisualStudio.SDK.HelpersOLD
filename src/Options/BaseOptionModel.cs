@@ -13,7 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 
-namespace Madskristensen.VisualStudio.SDK.Helpers
+namespace VS
 {
     /// <summary>
     /// A base class for specifying options
@@ -38,9 +38,9 @@ namespace Madskristensen.VisualStudio.SDK.Helpers
             {
                 ThreadHelper.ThrowIfNotOnUIThread();
 
-#pragma warning disable VSTHRD102 // Implement internal logic asynchronously
+#pragma warning disable VSTHRD104 // Offer async methods
                 return ThreadHelper.JoinableTaskFactory.Run(GetLiveInstanceAsync);
-#pragma warning restore VSTHRD102 // Implement internal logic asynchronously
+#pragma warning restore VSTHRD104 // Offer async methods
             }
         }
 

@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.Design;
 using Task = System.Threading.Tasks.Task;
 
-namespace Madskristensen.VisualStudio.SDK.Helpers
+namespace VS
 {
     public abstract class BaseCommand<T> where T : BaseCommand<T>, new()
     {
@@ -38,7 +38,18 @@ namespace Madskristensen.VisualStudio.SDK.Helpers
 
         protected virtual void Execute(Package package, OleMenuCommand cmd, OleMenuCmdEventArgs e)
         {
-            ExecuteAsync((AsyncPackage)package, cmd, e).FileAndForget("Helpers/BaseCommand");
+            ThreadHelper.JoinableTaskFactory.RunAsync(async delegate
+            {
+                try
+                {
+                    await ExecuteAsync((AsyncPackage)package, cmd, e);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                }
+            });
+
         }
 
         protected virtual void BeforeQueryStatus(Package package, OleMenuCommand cmd, OleMenuCmdEventArgs e)

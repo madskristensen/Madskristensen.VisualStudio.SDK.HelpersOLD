@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.Shell;
 
-namespace Madskristensen.VisualStudio.SDK.Helpers
+namespace VS
 {
     /// <summary>
     /// A base class for a DialogPage to show in Tools -> Options.
@@ -11,9 +11,9 @@ namespace Madskristensen.VisualStudio.SDK.Helpers
 
         public BaseOptionPage()
         {
-#pragma warning disable VSTHRD102 // Implement internal logic asynchronously
+#pragma warning disable VSTHRD104 // Offer async methods
             _model = ThreadHelper.JoinableTaskFactory.Run(BaseOptionModel<T>.CreateAsync);
-#pragma warning restore VSTHRD102 // Implement internal logic asynchronously
+#pragma warning restore VSTHRD104 // Offer async methods
         }
 
         public override object AutomationObject => _model;

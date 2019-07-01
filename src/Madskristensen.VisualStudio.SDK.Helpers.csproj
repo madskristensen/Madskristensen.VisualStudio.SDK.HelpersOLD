@@ -2,23 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
+    <Authors>Mads Kristensen</Authors>
+    <Owners>Mads Kristensen</Owners>
+    <Copyright>© Mads Kristensen. All rights reserved.</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <PackageId>Madskristensen.VisualStudio.SDK.Helpers</PackageId>
+    <PackageDescription>Helpers for Visual Studio extension development</PackageDescription>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIconUrl>https://aka.ms/vsextensibilityicon</PackageIconUrl>
+    <PackageTags>VisualStudio, VSSDK, SDK</PackageTags>
+    <PackageOutputPath>..\artifacts</PackageOutputPath>
+    <RootNamespace>VS</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="15.9.3" />
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers" Version="16.0.29" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.0.26228" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.10.0" Version="10.0.30320" />
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Remove="C:\Users\madsk\.nuget\packages\microsoft.visualstudio.projectsystem\15.8.243\build\AdditionalFiles\vs-threading.MainThreadAssertingMethods.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Remove="C:\Users\madsk\.nuget\packages\microsoft.visualstudio.sdk.analyzers\16.0.29\build\AdditionalFiles\vs-threading.MainThreadAssertingMethods.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Remove="C:\Users\madsk\.nuget\packages\microsoft.visualstudio.threading.analyzers\16.0.102\build\AdditionalFiles\vs-threading.MainThreadAssertingMethods.txt" />
+    <Reference Include="System.Design" />
   </ItemGroup>
 
 </Project>

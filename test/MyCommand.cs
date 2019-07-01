@@ -1,6 +1,6 @@
-﻿using Madskristensen.VisualStudio.SDK.Helpers;
-using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio.Shell;
 using System;
+using VS;
 using Task = System.Threading.Tasks.Task;
 
 namespace UsageTest
@@ -12,15 +12,15 @@ namespace UsageTest
 
         protected override async Task ExecuteAsync(AsyncPackage package, OleMenuCommand cmd, OleMenuCmdEventArgs e)
         {
-            await VS.StatusBar.SetTextAsync("This is great");
+            await StatusBar.SetTextAsync("This is great");
             await Task.Delay(2000);
-            await VS.StatusBar.StartAnimationAsync(StatusAnimation.Find);
+            await StatusBar.StartAnimationAsync(StatusAnimation.Find);
             await Task.Delay(2000);
-            await VS.StatusBar.EndAnimationAsync(StatusAnimation.Find);
+            await StatusBar.EndAnimationAsync(StatusAnimation.Find);
             await Task.Delay(2000);
-            await VS.StatusBar.SetTextAsync("ost");
+            await StatusBar.SetTextAsync("ost");
             await Task.Delay(2000);
-            await VS.StatusBar.ClearAsync();
+            await StatusBar.ClearAsync();
         }
     }
 }

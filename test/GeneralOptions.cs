@@ -1,5 +1,5 @@
-﻿using Madskristensen.VisualStudio.SDK.Helpers;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using VS;
 
 namespace UsageTest
 {
