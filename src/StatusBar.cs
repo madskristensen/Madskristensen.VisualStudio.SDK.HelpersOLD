@@ -4,7 +4,7 @@ using System;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 
-namespace Madskristensen.VisualStudio.SDK.Helpers.Services
+namespace Madskristensen.VisualStudio.SDK.Helpers
 {
     public sealed class StatusBar
     {

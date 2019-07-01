@@ -1,5 +1,4 @@
-﻿using Madskristensen.VisualStudio.SDK.Helpers.Services;
-using System;
+﻿using System;
 
 namespace Madskristensen.VisualStudio.SDK.Helpers
 {

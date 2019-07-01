@@ -1,4 +1,4 @@
-﻿namespace Madskristensen.VisualStudio.SDK.Helpers.Services
+﻿namespace Madskristensen.VisualStudio.SDK.Helpers
 {
     public enum StatusAnimation
     {

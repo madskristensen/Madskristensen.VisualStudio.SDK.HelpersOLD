@@ -1,15 +1,15 @@
 # Visual Studio SDK Helpers
 A helper library for Visual Studio extension development. Wraps services in easy-to-use async implementations that adopt best practices for reliability and performance.
 
-## Helpers
+## Helpers included
 
-* StatusBar
+* Status Bar
+* Base command class
+* Settings and options pages
 
-
-## Coming...
+## Helpers planned...
 
 * Error List
 * Projects and items
 * Solution
 * Source control
-* Settings
