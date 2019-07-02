@@ -22,7 +22,7 @@ namespace VS
             var cmdId = new CommandID(instance.Guid, instance.Id);
 
             var menuCmd = new OleMenuCommand((s, e) => { instance.Execute(package, (OleMenuCommand)s, (OleMenuCmdEventArgs)e); }, cmdId);
-            menuCmd.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(package, (OleMenuCommand)s, (OleMenuCmdEventArgs)e); };
+            menuCmd.BeforeQueryStatus += (s, e) => { instance.BeforeQueryStatus(package, (OleMenuCommand)s, e); };
             menuCmd.Supported = false;
 
             if (await package.GetServiceAsync(typeof(IMenuCommandService)) is OleMenuCommandService commandService)
@@ -49,10 +49,9 @@ namespace VS
                     System.Diagnostics.Debug.WriteLine(ex);
                 }
             });
-
         }
 
-        protected virtual void BeforeQueryStatus(Package package, OleMenuCommand cmd, OleMenuCmdEventArgs e)
+        protected virtual void BeforeQueryStatus(Package package, OleMenuCommand cmd, EventArgs e)
         {
 
         }

@@ -26,7 +26,7 @@ namespace VS
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
+                VsShellUtilities.LogError(ex.Source, ex.ToString());
                 return null;
             }
         }

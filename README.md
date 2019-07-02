@@ -13,10 +13,10 @@ await VS.StatusBar.SetTextAsync("This is great");
 * Status Bar
 * Base command class
 * Settings and options pages
+* Projects and items
 
 ## Helpers planned...
 
 * Error List
-* Projects and items
 * Solution
 * Source control
